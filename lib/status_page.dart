@@ -9,8 +9,8 @@ class StatusPage extends StatelessWidget {
       children: <Widget>[
         ListTile(
           leading: Container(
-            width: 30,
-            height: 30,
+            width: 40,
+            height: 40,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),

@@ -1,5 +1,7 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/call_page.dart';
+import 'package:whatsapp_clone/chat_page.dart';
 import 'package:whatsapp_clone/status_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -30,11 +32,27 @@ class HomePage extends StatelessWidget {
               bottom: PreferredSize(
                 preferredSize: Size.fromHeight(60),
                 child: TabBar(
-                  indicatorColor: Color(0xFF128c7e),
-                  indicatorWeight: 5,
+                  indicatorColor: Colors.white,
+                  indicatorWeight: 3,
                   tabs: <Widget>[
                     Tab(
-                      text: 'CONVERSAS',
+                      // text: 'CONVERSAS',
+                      // child: Badge(
+                      //   badgeColor: Colors.white,
+                      //   badgeContent: Text('2'),
+                      // ),
+                      child: Row(
+                        children: <Widget>[
+                          Text('CONVERSAS'),
+                          Padding(
+                            padding: EdgeInsets.only(right: 5),
+                          ),
+                          Badge(
+                            badgeColor: Colors.white,
+                            badgeContent: Text('2'),
+                          )
+                        ],
+                      ),
                     ),
                     Tab(
                       text: 'STATUS',
@@ -47,24 +65,9 @@ class HomePage extends StatelessWidget {
               )),
           body: TabBarView(
             children: <Widget>[
-              Column(
-                children: <Widget>[
-                  ListView(
-                    children: <Widget>[
-                      ListTile(
-                        title: Text('Sallys Carlos 1'),
-                        subtitle: Text('aasdhsdabadsdasshbhjjhdahhbh'),
-                      )
-                    ],
-                  ),
-                  FloatingActionButton(
-                    backgroundColor: Colors.green,
-                    child: Icon(Icons.message),
-                  )
-                ],
-              ),
+              ChatPage(),
               StatusPage(),
-              CallPage()
+              CallPage(),
             ],
           ),
         ),
